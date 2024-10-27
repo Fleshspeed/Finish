@@ -1,0 +1,315 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    
+    
+}
+
+
+body {
+    background-image: url('{% static "app/images/screen.jpg" %}');
+
+    
+}
+
+.container {
+    width: 1900px;
+    height: 44px;
+    margin: 0 auto;
+    margin-left: -350px;
+    
+}
+
+header {
+    padding: 15px 0;
+}
+
+
+.container nav {
+    display: flex;
+    justify-content: center;
+}
+
+
+.container nav ul {
+    display: inline-flex;
+    
+}
+
+
+.container nav ul li {
+    float: left;
+}
+
+
+
+.container_2 {
+    margin-left: 350px;
+}
+
+
+.wrapper {
+    background-color: #000000;
+    width: 1920px;
+    height: 44px;
+    color: white;
+
+
+}
+
+
+
+.container_3 {
+    width: 1500px;
+    height: 44px;
+    margin: 0 auto;
+    
+    
+    
+    
+    
+}
+
+a {
+    color:white;
+}
+
+
+
+.container_3 {
+    padding: 15px 0;
+}
+
+
+
+.container_3 .logo nav {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.container_3 nav ul {
+    display: inline-flex;
+    
+}
+
+
+ul {
+    margin-left: 760px;
+    
+    
+}
+
+ul li {
+    margin-left: 40px;
+    
+}
+
+
+.wrapper_2 {
+    background-color: #0F0F0F;
+    width: 1920px;
+    height: 80px;
+    color: white;
+    
+
+
+}
+
+.logo {
+    width: 104px;
+    height: 49px;
+    display: inline-block;
+
+}
+
+
+
+
+
+
+.img {
+    width: 22px;
+height: 22px;
+display: flex;
+margin-left: 20px;
+
+
+
+}
+
+
+.img_2 {
+    margin-left: 20px;
+}
+
+
+.main_1 {
+    color: white;
+
+}
+
+
+.border{
+    margin-left: 700px;
+    margin-top: 75px;
+    border: 5px solid white;
+    width: 320px;
+    height: 320px;
+    top: 284px;
+    left: 800px;
+    gap: 0px;
+    border: 4px 0px 0px 0px;
+    opacity: 0px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
+.porten {
+    width: 200px;
+    height: 50px;
+    padding: 5px 0;
+
+
+
+    
+}
+
+.line {
+    width: 200px;
+    border: 1px solid white;
+    margin-left: 60px;
+    
+
+
+
+}
+
+
+h1 {
+    margin-left: 10px;
+    font-family: PT Sans;
+    font-size: 30px;
+    font-weight: 200;
+    line-height: 28.47px;
+    text-align: center;
+    margin-top: 6px;
+
+}
+
+
+.border_2{
+    margin-top: 100px;
+}
+
+
+
+.p {
+
+    width: 1300px;
+    height: 200px;
+    /* border: 2px solid black; */
+
+    
+}
+
+
+
+
+p {
+
+
+    font-family: PT Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 60px;
+    margin-left: 450px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <header class="container">
+        <nav>
+            <ul>
+                <img src="{% static 'app/images/Vector.png' %}" alt="">
+                <li>8 (812) 123-45-67    |    Работаем 7 дней в неделю    |    9:00 — 18:00  </li>
+                <div class="container_2">
+                    <img src="{% static 'app/images/ic_sharp-log-in.png' %}" alt="">
+                    <li>Войти / Регистрация</li>
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+</div>
+    <div class="wrapper_2">
+    <div class="container_3">
+        <nav>
+            <span class="logo"><img src="{% static 'app/images/PORTEN.png' %}" alt="" class="porten_1"></span>
+            <ul>
+                <li>Понравилось</li>
+                <li><a href="{% url 'list' %}">Личный кабинет</a></li>
+                <li>Настройки</li>
+                <div class="main_img">
+                <div class="img">
+                    <img src="{% static 'app/images/bx_bx-cart.png' %}" alt="" class="img_1">
+                    <img src="{% static 'app/images/gridicons_search.png' %}" alt="" class="img_2">
+                </div>
+            </div>
+            
+
+            </ul>
+        </nav>
+    </div>
+
+</div>
+
+
+<main class="main_1">
+    <div class="main_main">
+    <div class="border">
+        <div class="border_2">
+            <img src="{% static 'app/images/PORTEN.png' %}" alt="" class="porten">
+            <div class="line"></div>
+            {% for item in items %}
+            <h1>{{ item.city }}</h1>
+            {% endfor %}
+        </div>
+
+        
+    </div>
+    <div>
+    </div>
+    <div class="p">
+        {% for item in items %}
+        <p>{{ item.text }}</p>
+        {% endfor %}
+    </div>
+    </div>
+    
+</div>
+</main>
+</body>
+</html>
